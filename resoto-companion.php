@@ -1,0 +1,2 @@
+<?php
+	/** Resoto Companion Plugin **/
