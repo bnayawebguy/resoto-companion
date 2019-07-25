@@ -142,6 +142,7 @@ final class Resoto_Companion {
 
 		/** Add Image Sizes **/
 		add_image_size( 'resoto-room-carousel', 640, 700, true );
+		add_image_size( 'resoto-blogs-carousel', 400, 280, true );
 		add_image_size( 'resoto-testimonial-carousel', 80, 80, true );
 
 		/** WP Hotel Booking Extra Options Meta **/

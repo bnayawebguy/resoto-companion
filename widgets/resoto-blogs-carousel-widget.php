@@ -184,7 +184,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 						'value' => \Elementor\Scheme_Color::COLOR_1,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .resoto-blogs-carousel .post-date' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -199,17 +199,8 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 						'value' => \Elementor\Scheme_Color::COLOR_1,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .resoto-blogs-carousel .post-date' => 'background-color: {{VALUE}}',
 					],
-				]
-			);
-
-			$this->add_group_control(
-				\Elementor\Group_Control_Border::get_type(),
-				[
-					'name' => 'date_border',
-					'label' => __( 'Border', 'resoto-companion' ),
-					'selector' => '{{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-prev:hover, {{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-next:hover',
 				]
 			);
 
@@ -219,7 +210,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 					'name' => 'date_typography',
 					'label' => __( 'Typography', 'resoto-companion' ),
 					'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-					'selector' => '{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price',
+					'selector' => '{{WRAPPER}} .resoto-blogs-carousel .post-date',
 				]
 			);
 
@@ -254,7 +245,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 								'value' => \Elementor\Scheme_Color::COLOR_1,
 							],
 							'selectors' => [
-								'{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price-title .room-title' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .resoto-blogs-carousel .blog-metas .cats a' => 'color: {{VALUE}}',
 							],
 						]
 					);
@@ -265,7 +256,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 							'name' => 'cats_typography_normal',
 							'label' => __( 'Typography', 'resoto-companion' ),
 							'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-							'selector' => '{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price-title .room-title',
+							'selector' => '{{WRAPPER}} .resoto-blogs-carousel .blog-metas .cats a',
 						]
 					);
 
@@ -288,7 +279,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 								'value' => \Elementor\Scheme_Color::COLOR_1,
 							],
 							'selectors' => [
-								'{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price-title .room-title' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .resoto-blogs-carousel .blog-metas .cats a:hover' => 'color: {{VALUE}}',
 							],
 						]
 					);
@@ -299,7 +290,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 							'name' => 'cats_typography_hover',
 							'label' => __( 'Typography', 'resoto-companion' ),
 							'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-							'selector' => '{{WRAPPER}} .resoto-rooms-carousel .room-post .room-price-title .room-title',
+							'selector' => '{{WRAPPER}} .resoto-blogs-carousel .blog-metas .cats a:hover',
 						]
 					);
 
@@ -327,8 +318,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 						'value' => \Elementor\Scheme_Color::COLOR_1,
 					],
 					'selectors' => [
-						'{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn' => 'color: {{VALUE}}',
-						'{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn:after' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .resoto-blogs-carousel .blog-metas .post-comments, {{WRAPPER}} .resoto-blogs-carousel .blog-metas .post-comments:before' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -339,137 +329,9 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 					'name' => 'comments_typography',
 					'label' => __( 'Typography', 'resoto-companion' ),
 					'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-					'selector' => '{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn',
+					'selector' => '{{WRAPPER}} .resoto-blogs-carousel .blog-metas .post-comments, {{WRAPPER}} .resoto-blogs-carousel .blog-metas .post-comments:before',
 				]
 			);
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'dots_style',
-			[
-				'label' => __( 'Dots', 'resoto-companion' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-			$this->start_controls_tabs(
-				'dots_style_tabs'
-			);
-
-				$this->start_controls_tab(
-					'dots_style_normal_tab',
-					[
-						'label' => __( 'Normal', 'resoto-companion' ),
-					]
-				);
-
-					$this->add_control(
-						'dots_color_normal',
-						[
-							'label' => __( 'Color', 'resoto-companion' ),
-							'type' => \Elementor\Controls_Manager::COLOR,
-							'scheme' => [
-								'type' => \Elementor\Scheme_Color::get_type(),
-								'value' => \Elementor\Scheme_Color::COLOR_1,
-							],
-							'selectors' => [
-								'{{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-prev, {{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-next' => 'color: {{VALUE}}',
-							],
-						]
-					);
-
-					$this->add_control(
-						'dots_size_normal',
-						[
-							'label' => __( 'Size', 'resoto-companion' ),
-							'type' => \Elementor\Controls_Manager::SLIDER,
-							'size_units' => [ 'px' ],
-							'range' => [
-								'px' => [
-									'min' => 3,
-									'max' => 20,
-									'step' => 1,
-								]
-							],
-							'default' => [
-								'unit' => 'px',
-								'size' => 10,
-							],
-							'selectors' => [
-								'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
-							],
-						]
-					);
-
-					$this->add_group_control(
-						\Elementor\Group_Control_Border::get_type(),
-						[
-							'name' => 'dots_border_normal',
-							'label' => __( 'Border', 'resoto-companion' ),
-							'selector' => '{{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-prev:hover, {{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-next:hover',
-						]
-					);
-
-				$this->end_controls_tab();
-
-				$this->start_controls_tab(
-					'dots_style_hover_tab',
-					[
-						'label' => __( 'Hover', 'resoto-companion' ),
-					]
-				);
-
-					$this->add_control(
-						'dots_color_hover',
-						[
-							'label' => __( 'Color', 'resoto-companion' ),
-							'type' => \Elementor\Controls_Manager::COLOR,
-							'scheme' => [
-								'type' => \Elementor\Scheme_Color::get_type(),
-								'value' => \Elementor\Scheme_Color::COLOR_1,
-							],
-							'selectors' => [
-								'{{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-prev, {{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-next' => 'color: {{VALUE}}',
-							],
-						]
-					);
-
-					$this->add_control(
-						'dots_size_hover',
-						[
-							'label' => __( 'Size', 'resoto-companion' ),
-							'type' => \Elementor\Controls_Manager::SLIDER,
-							'size_units' => [ 'px' ],
-							'range' => [
-								'px' => [
-									'min' => 3,
-									'max' => 20,
-									'step' => 1,
-								]
-							],
-							'default' => [
-								'unit' => 'px',
-								'size' => 10,
-							],
-							'selectors' => [
-								'{{WRAPPER}} .box' => 'width: {{SIZE}}{{UNIT}};',
-							],
-						]
-					);
-
-					$this->add_group_control(
-						\Elementor\Group_Control_Border::get_type(),
-						[
-							'name' => 'dots_border_hover',
-							'label' => __( 'Border', 'resoto-companion' ),
-							'selector' => '{{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-prev:hover, {{WRAPPER}} .resoto-rooms-carousel .owl-nav button.owl-next:hover',
-						]
-					);
-
-				$this->end_controls_tab();
-
-			$this->end_controls_tabs();
 
 		$this->end_controls_section();
 
@@ -480,6 +342,19 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
+
+			$this->add_control(
+				'title_margin',
+				[
+					'label' => __( 'Margin', 'plugin-domain' ),
+					'type' => \Elementor\Controls_Manager::DIMENSIONS,
+					'allowed_dimensions' => 'vertical',
+					'size_units' => [ 'px', '%', 'em' ],
+					'selectors' => [
+						'{{WRAPPER}} .resoto-blogs-carousel .blog-title' => 'margin: {{TOP}}{{UNIT}} 0 {{BOTTOM}}{{UNIT}} 0;',
+					],
+				]
+			);
 
 			$this->start_controls_tabs(
 				'title_style_tabs'
@@ -502,8 +377,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 								'value' => \Elementor\Scheme_Color::COLOR_1,
 							],
 							'selectors' => [
-								'{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn' => 'color: {{VALUE}}',
-								'{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn:after' => 'background-color: {{VALUE}}',
+								'{{WRAPPER}} .resoto-blogs-carousel .blog-title a' => 'color: {{VALUE}}',
 							],
 						]
 					);
@@ -514,7 +388,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 							'name' => 'title_typography_normal',
 							'label' => __( 'Typography', 'resoto-companion' ),
 							'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-							'selector' => '{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn',
+							'selector' => '{{WRAPPER}} .resoto-blogs-carousel .blog-title a',
 						]
 					);
 
@@ -537,8 +411,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 								'value' => \Elementor\Scheme_Color::COLOR_1,
 							],
 							'selectors' => [
-								'{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn' => 'color: {{VALUE}}',
-								'{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn:after' => 'background-color: {{VALUE}}',
+								'{{WRAPPER}} .resoto-blogs-carousel .blog-title a:hover' => 'color: {{VALUE}}',
 							],
 						]
 					);
@@ -549,7 +422,93 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 							'name' => 'title_typography_hover',
 							'label' => __( 'Typography', 'resoto-companion' ),
 							'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
-							'selector' => '{{WRAPPER}} .resoto-rooms-carousel .room-post .buy-now-btn',
+							'selector' => '{{WRAPPER}} .resoto-blogs-carousel .blog-title a',
+						]
+					);
+
+				$this->end_controls_tab();
+
+
+
+			$this->end_controls_tabs();
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'readmore_style',
+			[
+				'label' => __( 'Readmore Text', 'resoto-companion' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+			$this->start_controls_tabs(
+				'readmore_style_tabs'
+			);
+
+				$this->start_controls_tab(
+					'readmore_style_normal_tab',
+					[
+						'label' => __( 'Normal', 'resoto-companion' ),
+					]
+				);
+
+					$this->add_control(
+						'readmore_color_normal',
+						[
+							'label' => __( 'Color', 'resoto-companion' ),
+							'type' => \Elementor\Controls_Manager::COLOR,
+							'scheme' => [
+								'type' => \Elementor\Scheme_Color::get_type(),
+								'value' => \Elementor\Scheme_Color::COLOR_1,
+							],
+							'selectors' => [
+								'{{WRAPPER}} .resoto-blogs-carousel .readmore-btn' => 'color: {{VALUE}}',
+							],
+						]
+					);
+
+					$this->add_group_control(
+						\Elementor\Group_Control_Typography::get_type(),
+						[
+							'name' => 'readmore_typography_normal',
+							'label' => __( 'Typography', 'resoto-companion' ),
+							'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
+							'selector' => '{{WRAPPER}} .resoto-blogs-carousel .readmore-btn',
+						]
+					);
+
+				$this->end_controls_tab();
+
+				$this->start_controls_tab(
+					'readmore_style_hover_tab',
+					[
+						'label' => __( 'Hover', 'resoto-companion' ),
+					]
+				);
+
+					$this->add_control(
+						'readmore_color_hover',
+						[
+							'label' => __( 'Color', 'resoto-companion' ),
+							'type' => \Elementor\Controls_Manager::COLOR,
+							'scheme' => [
+								'type' => \Elementor\Scheme_Color::get_type(),
+								'value' => \Elementor\Scheme_Color::COLOR_1,
+							],
+							'selectors' => [
+								'{{WRAPPER}} .resoto-blogs-carousel .readmore-btn:hover' => 'color: {{VALUE}}',
+							],
+						]
+					);
+
+					$this->add_group_control(
+						\Elementor\Group_Control_Typography::get_type(),
+						[
+							'name' => 'readmore_typography_hover',
+							'label' => __( 'Typography', 'resoto-companion' ),
+							'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
+							'selector' => '{{WRAPPER}} .resoto-blogs-carousel .readmore-btn:hover',
 						]
 					);
 
@@ -558,6 +517,95 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 			$this->end_controls_tabs();
 
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'dots_style',
+			[
+				'label' => __( 'Dots', 'resoto-companion' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+			$this->add_control(
+				'dots_size',
+				[
+					'label' => __( 'Size', 'resoto-companion' ),
+					'type' => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'min' => 3,
+							'max' => 20,
+							'step' => 1,
+						]
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => 15,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .resoto-blogs-carousel .owl-dots button.owl-dot' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
+					],
+				]
+			);
+
+			$this->start_controls_tabs(
+				'dots_style_tabs'
+			);
+
+				$this->start_controls_tab(
+					'dots_style_normal_tab',
+					[
+						'label' => __( 'Normal', 'resoto-companion' ),
+					]
+				);
+
+					$this->add_control(
+						'dots_color_normal',
+						[
+							'label' => __( 'Color', 'resoto-companion' ),
+							'type' => \Elementor\Controls_Manager::COLOR,
+							'scheme' => [
+								'type' => \Elementor\Scheme_Color::get_type(),
+								'value' => \Elementor\Scheme_Color::COLOR_1,
+							],
+							'selectors' => [
+								'{{WRAPPER}} .resoto-blogs-carousel .owl-dots button.owl-dot' => 'border-color: {{VALUE}}',
+							],
+						]
+					);
+
+				$this->end_controls_tab();
+
+				$this->start_controls_tab(
+					'dots_style_hover_tab',
+					[
+						'label' => __( 'Hover', 'resoto-companion' ),
+					]
+				);
+
+					$this->add_control(
+						'dots_color_hover',
+						[
+							'label' => __( 'Color', 'resoto-companion' ),
+							'type' => \Elementor\Controls_Manager::COLOR,
+							'scheme' => [
+								'type' => \Elementor\Scheme_Color::get_type(),
+								'value' => \Elementor\Scheme_Color::COLOR_1,
+							],
+							'default' => '#ec6a2a',
+							'selectors' => [
+								'{{WRAPPER}} .resoto-blogs-carousel .owl-dots button.owl-dot.active, .resoto-blogs-carousel .owl-dots button.owl-dot:hover' => 'border-color: {{VALUE}}',
+								'{{WRAPPER}} .resoto-blogs-carousel .owl-dots button.owl-dot.active, .resoto-blogs-carousel .owl-dots button.owl-dot:hover' => 'background-color: {{VALUE}}',
+							],
+						]
+					);
+
+				$this->end_controls_tab();
+
+			$this->end_controls_tabs();
+
+		$this->end_controls_section();	
 
     }
 
@@ -583,7 +631,7 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 				<?php while( $blogs_query->have_posts() ) : $blogs_query->the_post(); ?>
 					<?php if( has_post_thumbnail() ) : ?>
 						<?php
-							$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'resoto-room-carousel' );
+							$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'resoto-blogs-carousel' );
 							$img_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
 						?>
 						<div class="blog-post">
@@ -599,13 +647,16 @@ class Resoto_Blogs_Carousel_Widget extends \Elementor\Widget_Base {
 									?>
 								</span>
 
-								<span class="comments">
-									
+								<span class="post-comments">
+									<i class="lni-bubble"></i>
+									<?php comments_number( 'no comments', 'one comment', '% comments' ); ?>
 								</span>
 							</div>
 
 							<h3 class="blog-title">
-								<?php the_title(); ?>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_title(); ?>
+								</a>
 							</h3>
 							
 							<?php if( $settings['readmore_text'] ) : ?>
