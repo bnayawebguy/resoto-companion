@@ -1,0 +1,197 @@
+/** ELementor Custom Element Styles **/
+
+/** Counter **/
+.resoto-counter {
+    display: flex;
+    align-items: center;
+}
+
+.resoto-counter .counter-icon {
+    line-height: 0;
+    position: relative;
+    margin-right: 40px;
+}
+
+.resoto-counter .counter-icon:after {
+    content: "";
+    width: 1px;
+    height: 40px;
+    background: #cecece;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.resoto-counter .counter-title {
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: column;
+}
+
+.resoto-counter .counter-title .counter {
+    margin-bottom: 10px;
+}
+
+/** Room Carousel **/
+.resoto-rooms-carousel {
+    position: relative;
+}
+
+.resoto-rooms-carousel .room-post {
+    position: relative;
+    color: #ffffff;
+}
+
+.resoto-rooms-carousel .room-post .room-image {
+    overflow: hidden;
+}
+
+.resoto-rooms-carousel .room-post .room-image img {
+    transition: all 0.3s ease;
+}
+
+.resoto-rooms-carousel .room-post:hover .room-image > img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.resoto-rooms-carousel .room-post .room-image:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    position: absolute;
+    z-index: 1;
+}
+
+.resoto-rooms-carousel .room-post .room-price-title {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+
+.resoto-rooms-carousel .room-post .room-price-title * {
+    position: relative;
+    z-index: 1;
+}
+
+.resoto-rooms-carousel .room-post .buy-now-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: #ffffff;
+    display: inline-block;
+    z-index: 3;
+}
+
+.resoto-rooms-carousel .room-post .buy-now-btn:after {
+    content: "";
+    height: 1px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.resoto-rooms-carousel .room-post .buy-now-btn:hover::after {
+    width: 100%;
+}
+
+.resoto-rooms-carousel .owl-nav button.owl-prev,
+.resoto-rooms-carousel .owl-nav button.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-20%);
+    background: #292929;
+    padding: 10px !important;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.resoto-rooms-carousel .owl-nav button.owl-prev:hover,
+.resoto-rooms-carousel .owl-nav button.owl-next:hover {
+    background-color: #ec6a2a;
+}
+
+.resoto-rooms-carousel .owl-nav button.owl-prev {
+    left: 30px;
+}
+
+.resoto-rooms-carousel .owl-nav button.owl-next {
+    right: 30px;
+}
+
+/** Testimonial Carousel **/
+.resoto-testimonial-carousel .testimonial {
+    border: 1px solid #f5f5f5;
+    padding: 25px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 5px 22px 6px rgba(0,0,0,.05);
+        box-shadow: 0 5px 22px 6px rgba(0,0,0,.05);
+    position: relative;
+}
+
+.resoto-testimonial-carousel .testimonial .image {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-top: -65px;
+    margin-bottom: 20px;
+}
+
+.resoto-testimonial-carousel .testimonial .image img {
+    border-radius: 50%;
+}
+
+.resoto-testimonial-carousel .testimonial .testimony {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resoto-testimonial-carousel .testimonial .name-design {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.resoto-testimonial-carousel .testimonial .name {
+    margin-bottom: 0px;
+}
+
+.resoto-testimonial-carousel .lni-quotation {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    padding: 20px;
+    bottom: 0;
+    background: #ec6a2a;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    color: #fff;
+}
+
+/** Blogs Carousel **/
+.resoto-blogs-carousel .blog-image {
+    border-radius: 20px;
+    position: relative;
+}
+
+.resoto-blogs-carousel .blog-image img {
+    border-radius: 20px;
+}
+
+.resoto-blogs-carousel .post-date {
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: #ec6a2a;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    left: 40px;
+}
