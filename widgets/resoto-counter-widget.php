@@ -22,7 +22,7 @@ class Resoto_Counter_Widget extends \Elementor\Widget_Base {
 
     /** Script Dependencies **/
     public function get_script_depends() {
-		return [ 'jquery-numerator' ];
+		return [ 'waypoints', 'jquery-numerator' ];
 	}
 
 	/** Widget Controls **/
@@ -190,17 +190,26 @@ class Resoto_Counter_Widget extends \Elementor\Widget_Base {
 		?>
 			<script>
 				jQuery(document).ready(function ($) {
+
 					var counter = $('#<?php echo esc_attr( $uid ); ?>');
 					var counter_start = counter.attr('data-start');
 					var counter_end = counter.attr('data-end');
 					var duration = counter.attr('data-duration');
-					$('#<?php echo esc_attr($uid); ?> .counter').numerator( {
-						easing: 'linear',
-				        duration: parseInt(duration),
-				        rounding: 0,
-				        toValue: parseInt(counter_end),
-				        fromValue: parseInt(counter_start),
-					} );
+					var counter_element = $('#<?php echo esc_attr($uid); ?> .counter');
+
+					var waypoint = new Waypoint({
+					  element: counter_element,
+					  handler: function(direction) {
+					    counter_element.numerator( {
+							easing: 'linear',
+					        duration: parseInt(duration),
+					        rounding: 0,
+					        toValue: parseInt(counter_end),
+					        fromValue: parseInt(counter_start),
+						} );
+					  },
+					  offset: '90%'
+					})
 				});
 			</script>
 		<?php

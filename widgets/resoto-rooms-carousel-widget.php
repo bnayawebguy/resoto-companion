@@ -102,6 +102,33 @@ class Resoto_Rooms_Carousel_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+			$this->add_responsive_control(
+				'column',
+				[
+					'label' => __( 'No. of Column', 'resoto-companion' ),
+					'type' => \Elementor\Controls_Manager::SLIDER,
+					'range' => [
+						'no' => [
+							'min' => 1,
+							'max' => 4,
+						],
+					],
+					'devices' => [ 'desktop', 'tablet', 'mobile' ],
+					'desktop_default' => [
+						'size' => 4,
+						'unit' => 'no',
+					],
+					'tablet_default' => [
+						'size' => 3,
+						'unit' => 'no',
+					],
+					'mobile_default' => [
+						'size' => 2,
+						'unit' => 'no',
+					],
+				]
+			);
+
 			$this->add_control(
 				'margin',
 				[
@@ -458,11 +485,25 @@ class Resoto_Rooms_Carousel_Widget extends \Elementor\Widget_Base {
 		$autoplay = ( $settings['autoplay'] ) ? 'true' : 'false';
 		$pause_on_hover = ( $settings['pause_on_hover'] ) ? 'true' : 'false';
 		$margin = ( isset( $settings['margin'] ) ) ? $settings['margin'] : 0;
+
+		$column = ( $settings['column']['size'] ) ? $settings['column']['size'] : 3;
+		$column_tablet = ( $settings['column_tablet']['size'] ) ? $settings['column_tablet']['size'] : 2;
+		$column_mobile = ( $settings['column_mobile']['size'] ) ? $settings['column_mobile']['size'] : 1;
 		?>
 		<script type="text/javascript">
 			jQuery(document).ready( function($) {
 				$('#<?php echo esc_attr( $uid ); ?>').owlCarousel({
-					items: 3,
+					responsive : {
+					    0 : {
+					        items: <?php echo esc_attr($column_mobile); ?>,
+					    },
+					    480 : {
+					        items: <?php echo esc_attr($column_tablet); ?>,
+					    },
+					    768 : {
+					        items: <?php echo esc_attr($column); ?>,
+					    }
+					},
 					nav: <?php echo esc_attr($nav); ?>,
 					loop: <?php echo esc_attr($loop); ?>,
 					autoplay: <?php echo esc_attr($autoplay); ?>,
